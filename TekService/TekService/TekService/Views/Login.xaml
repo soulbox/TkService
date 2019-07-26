@@ -76,7 +76,7 @@
             <Image   Source="success.png" WidthRequest="24" HeightRequest="24" BackgroundColor="Transparent" />
         </StackLayout>
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand" Padding="0,0,0,35" >
-            <Label x:Name="status" Text="Powered By@Kadir Aygün" VerticalOptions="Center"  HorizontalOptions="Center" FontSize="Small" TextColor="WhiteSmoke"/>
+            <Label x:Name="status" Text="v0" VerticalOptions="Center"  HorizontalOptions="Center" FontSize="Small" TextColor="Black"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>
