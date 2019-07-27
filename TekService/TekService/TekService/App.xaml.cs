@@ -13,6 +13,7 @@ namespace TekService
         {
             InitializeComponent();
             MainPage = new Login();
+           
         }
 
         protected override void OnStart()

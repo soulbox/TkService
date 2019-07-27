@@ -7,13 +7,13 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Entry">
-                <Setter Property="Margin" Value="30,30,30,0"></Setter>
+                <!--<Setter Property="Margin" Value="30,30,30,0"/>-->
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="PlaceholderColor"  Value="Gray" />
             </Style>
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#1DA1F2"/>
-                <Setter Property="Margin"  Value="50,5,50,0"/>
+                <!--<Setter Property="Margin"  Value="50,5,50,0"/>-->
                 <Setter Property="TextColor" Value="WhiteSmoke" />
                 <Setter Property="BorderRadius" Value="20"/>
             </Style>
@@ -23,19 +23,22 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     
-    <StackLayout BackgroundColor="WhiteSmoke"  Padding="0,60,0,0">
+    <StackLayout BackgroundColor="WhiteSmoke"  Padding="30,60,30,30">
         <!--Center-->
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="0,0,0,30" >
+            <Image x:Name="logo"  Source="{Binding .,Converter={StaticResource imageconvert}}"  WidthRequest="40" HeightRequest="40"  />
+        </StackLayout>
         <StackLayout  VerticalOptions="CenterAndExpand"  >
             <!-- Place new controls here -->
-            <Image x:Name="logo"  Source="{Binding .,Converter={StaticResource imageconvert}}"  WidthRequest="40" HeightRequest="40" />
             <Entry Placeholder="E-Posta"
                x:Name="txtKullanıcıAdı"
+                   Text="bekir.topuz@gmail.com"
                VerticalOptions="Center"/>
             <Entry Placeholder="Şifresi"
                x:Name="txtŞifresi"
+                   Text="000000"
                IsPassword="True"/>
-
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="20" Padding="0,0,35,0" >
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="20">
                 <Label Text="Hatırla"  FontSize="Medium" VerticalOptions="Center" HorizontalOptions="EndAndExpand" 
                        TextColor="Gray"/>
                 <Switch x:Name="swHatırla"  Toggled ="SwHatırla_Toggled"  />

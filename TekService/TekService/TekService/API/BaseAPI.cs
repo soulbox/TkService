@@ -24,7 +24,7 @@ namespace TekService.API
             request.Content = GetContent(strcontent);
             return request;
         }
-        public static StringContent GetContent(string strcontent)
+        public  StringContent GetContent(string strcontent)
         {
             content = new StringContent(strcontent, Encoding.UTF8, mediatype);
             return content;

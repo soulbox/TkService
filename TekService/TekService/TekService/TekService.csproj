@@ -10,13 +10,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\about_gray.png" />
+    <None Remove="images\calender_gray.png" />
+    <None Remove="images\Exit_gray.png" />
     <None Remove="images\logo.PNG" />
     <None Remove="images\logo2.png" />
+    <None Remove="images\service_gray.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="images\about_gray.png" />
+    <EmbeddedResource Include="images\calender_gray.png" />
+    <EmbeddedResource Include="images\Exit_gray.png" />
     <EmbeddedResource Include="images\logo.png" />
     <EmbeddedResource Include="images\logo2.png" />
+    <EmbeddedResource Include="images\service_gray.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +35,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Calender.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MasterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

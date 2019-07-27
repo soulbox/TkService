@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TekService.Views.MasterPage"
+             xmlns:local="clr-namespace:TekService.Data;assembly=TekService"
+             xmlns:pages="clr-namespace:TekService.Views"
+             Title="TekServis">
+    <MasterDetailPage.Resources>
+        <ResourceDictionary>
+            <local:imageConverter x:Key="imageconvert"/>
+        </ResourceDictionary>
+    </MasterDetailPage.Resources>
+    <MasterDetailPage.Master>       
+        <ContentPage Title="Menu">
+            <Grid BackgroundColor="Transparent" Opacity="0.8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" >                   
+                    <StackLayout Padding="0,25,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Image x:Name="logo" Source="{Binding .,Converter={StaticResource imageconvert}}" WidthRequest="40" HeightRequest="40" />
+                        <Label x:Name="title" Text="Sovia Otomasyon" TextColor="Gray"  FontSize="13" />
+                        <Label x:Name="account" HorizontalOptions="CenterAndExpand"  Text="" TextColor="Gray"  FontSize="13" />
+                    </StackLayout>
+                </Grid>
+                <StackLayout Margin="20,40,20,0" Grid.Row="1" Spacing="15">
+                    <ListView x:Name="navigationDrawerList" RowHeight="60" SeparatorVisibility="None" BackgroundColor="WhiteSmoke"  ItemSelected="NavigationDrawerList_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <!-- Main design for our menu items -->
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                        <Image Source="{Binding Icon,Converter={StaticResource imageconvert}}" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" />
+                                        <Label Text="{Binding Title}" FontSize="Medium" VerticalOptions="Center" TextColor="Black"  />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

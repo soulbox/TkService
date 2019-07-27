@@ -5,9 +5,17 @@ using System.Text;
 namespace TekService.API
 {
     using Newtonsoft;
-    
-    public  class APIManager
+
+    public class APIManager
     {
+        private static Member member;
+
+        public static Member Member
+        {
+            get { return member = member ?? new Member(); }
+            set { member = value; }
+        }
+
 
     }
 
