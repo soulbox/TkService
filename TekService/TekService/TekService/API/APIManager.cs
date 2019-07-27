@@ -4,17 +4,12 @@ using System.Text;
 
 namespace TekService.API
 {
+    using Newtonsoft;
     
-    public static class APIManager
+    public  class APIManager
     {
 
     }
 
-    public interface IMember
-    {
-        string Login();
-        string List();
-        string ForgotPassword();
-        string UpdateDeviceInfo();
-    }
+
 }
