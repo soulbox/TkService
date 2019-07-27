@@ -13,7 +13,7 @@ namespace TekService.API
         public static HttpRequestMessage request => _request = _request ?? new HttpRequestMessage();
         public static StringContent content;
         public const string mediatype = "application/json";
-        public BaseAPI()
+        static BaseAPI()
         {
 
             Client.DefaultRequestHeaders.Add("Accept", mediatype);

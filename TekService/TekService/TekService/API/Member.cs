@@ -11,14 +11,13 @@ namespace TekService.API
     public class Member : BaseAPI
     {
         static readonly string RequestURL = "http://api.hesap.tekservis.net/api/member/get";
+        static Member() 
+        {
+
+        }
         public Member() : base()
         {
             
-            if (!Client.DefaultRequestHeaders.Contains("Accept"))
-            {
-
-                Client.DefaultRequestHeaders.Add("Accept", mediatype);
-            }
         }
 
         public  async Task<MemberResponse> LoginAsync(MemberRequest memberRequest)
