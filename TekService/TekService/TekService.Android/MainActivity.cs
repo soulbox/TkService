@@ -17,6 +17,10 @@ namespace TekService.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Internet ) != (int)Permission.Granted)
+            {
+                ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.Internet }, 0);
+            }
             if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.RequestInstallPackages) != (int)Permission.Granted)
             {
                 ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.RequestInstallPackages }, 0);
