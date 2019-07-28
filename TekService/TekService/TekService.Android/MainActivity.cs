@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Support.V4.Content;
+using Android;
+using Android.Support.V4.App;
 
 namespace TekService.Droid
 {
@@ -14,6 +17,11 @@ namespace TekService.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.RequestInstallPackages) != (int)Permission.Granted)
+            {
+                ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.RequestInstallPackages }, 0);
+            }
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
        

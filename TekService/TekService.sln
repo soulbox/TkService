@@ -4,12 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TekService.Android", "TekService\TekService.Android\TekService.Android.csproj", "{258B50C0-D40F-4B72-A778-0DC34C1F35B2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D02A7C4C-B3E9-42F1-B0EC-2B662A50FA83} = {D02A7C4C-B3E9-42F1-B0EC-2B662A50FA83}
+		{D49698D4-BFBF-46D2-B2F3-575E222843F0} = {D49698D4-BFBF-46D2-B2F3-575E222843F0}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TekService.iOS", "TekService\TekService.iOS\TekService.iOS.csproj", "{D49698D4-BFBF-46D2-B2F3-575E222843F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TekService.UWP", "TekService\TekService.UWP\TekService.UWP.csproj", "{D02A7C4C-B3E9-42F1-B0EC-2B662A50FA83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TekService", "TekService\TekService\TekService.csproj", "{42090131-A41A-44F2-B433-446CF0631450}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TekService", "TekService\TekService\TekService.csproj", "{42090131-A41A-44F2-B433-446CF0631450}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -333,5 +337,14 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B848B9F-374E-458D-9CAC-EACD04DDC56D}
+	EndGlobalSection
+	GlobalSection(AutomaticVersions) = postSolution
+		UpdateAssemblyVersion = True
+		UpdateAssemblyFileVersion = False
+		UpdateAssemblyInfoVersion = False
+		AssemblyVersionSettings = None.IncrementOnDemand.IncrementWithResetOnIncrease.DateStamp
+		UpdatePackageVersion = False
+		AssemblyInfoVersionType = SettingsVersion
+		InheritWinAppVersionFrom = None
 	EndGlobalSection
 EndGlobal

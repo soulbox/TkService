@@ -28,7 +28,9 @@ namespace TekService.Views
             Type page = CurrentPage.TargetType;
             if (!CurrentPage.Title.Contains("Çıkış"))
             {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(page));
+                var navpage = (Page)Activator.CreateInstance(page);
+                navpage.Title = CurrentPage.Title;
+                Detail = new NavigationPage(navpage);
                 IsPresented = false;
             }
             else

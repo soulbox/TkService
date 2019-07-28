@@ -19,9 +19,28 @@ namespace TekService.Views
         {
             InitializeComponent();
             logo.BindingContext = "logo2.png";
+                       
+            status.Text = "Alpha-v" + DependencyService.Get<Utility.IAppVersion>().GetVersion();
+            btnUnuttum.Clicked += async (obj, i) => 
+            {
+                //await Navigation.PushModalAsync(new forget(), true);
+                await Navigation.PushAsync(new forget(),true );
+            };
+            btnSign .Clicked +=  (obj, i) =>
+            {
+                Device.OpenUri(new Uri("http://www.tekservis.net/?ref=fromAndroidNewAccount"));
+            };
+            btnAbout.Clicked += (obj, i) =>
+            {
+                Device.OpenUri(new Uri("http://www.tekservis.net/?ref=fromAndroidInfo"));
+            };
 
         }
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            txtKullanıcıAdı.Focus();
+        }
         private void SwHatırla_Toggled(object sender, ToggledEventArgs e)
         {
 

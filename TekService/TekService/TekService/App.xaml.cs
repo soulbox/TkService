@@ -12,8 +12,10 @@ namespace TekService
         public App()
         {
             InitializeComponent();
-            MainPage = new Login();
-           
+            //MainPage = new Login();
+            MainPage = new NavigationPage(new Login());
+
+
         }
 
         protected override void OnStart()

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TekService.Views.forget"
+             Title="Şifremi Unuttum">
+    <ContentPage.Content>
+        <StackLayout Padding="25" Spacing="25"  VerticalOptions="CenterAndExpand">
+            
+            <Entry x:Name="eposta" Placeholder="E-Posta" />            
+            <Button x:Name="btngonder" 
+                    TextColor="WhiteSmoke" 
+                    BackgroundColor="#1DA1F2" 
+                    Text="Gönder" CornerRadius="20" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
