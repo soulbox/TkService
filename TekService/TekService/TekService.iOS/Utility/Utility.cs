@@ -13,7 +13,10 @@ namespace TekService.iOS.Utility
     {
         public string GetVersion()
         {
-            return NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleShortVersionString").ToString();
+            var vers = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            //return NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleShortVersionString").ToString();
+            return vers.ToString();
+
         }
         public int GetBuild()
         {
