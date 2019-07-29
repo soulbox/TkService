@@ -19,6 +19,8 @@ namespace TekService.Droid.Utility
     using TekService.Utility;
     public class Utility : IAppVersion
     {
+        
+
         public string GetVersion()
         {
             var vers = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
@@ -26,8 +28,8 @@ namespace TekService.Droid.Utility
 
             PackageManager manager = context.PackageManager;
             PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
-            //return info.VersionName;
-            return vers.ToString();
+            return info.VersionName;
+            //return vers.ToString();
 
         }
 

@@ -8,5 +8,6 @@ namespace TekService.Utility
     {
         string GetVersion();
         int GetBuild();
+   
     }
 }

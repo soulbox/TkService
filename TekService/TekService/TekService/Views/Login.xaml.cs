@@ -20,7 +20,9 @@ namespace TekService.Views
             InitializeComponent();
             logo.BindingContext = "logo2.png";
                        
-            status.Text = "Alpha-v" + DependencyService.Get<Utility.IAppVersion>().GetVersion();
+            //status.Text = "Alpha-v" + DependencyService.Get<Utility.IAppVersion>().GetVersion();
+            status.Text = "Alpha-v" + Utility.AppVersion.GetVersion;
+
             btnUnuttum.Clicked += async (obj, i) => 
             {
                 //await Navigation.PushModalAsync(new forget(), true);
