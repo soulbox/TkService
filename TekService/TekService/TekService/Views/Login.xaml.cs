@@ -98,9 +98,11 @@ namespace TekService.Views
                 await DisplayAlert("Giriş", $"Hoşgeldin:{sonuc.FirstName} {sonuc.LastName}", "Tamam");
                 MasterPage fpm = new MasterPage(sonuc)
                 {
-                    Detail = new NavigationPage(new Calender())
+                    Detail = new NavigationPage(MasterPageItems.GetCalenderTabbedPage())
                 };
+                
                 Application.Current.MainPage = fpm;
+
             }
         }
     }

@@ -26,21 +26,36 @@ namespace TekService.Views
         {
             CurrentPage = (MasterPageItems)e.SelectedItem;           
             Type page = CurrentPage.TargetType;
-            if (!CurrentPage.Title.Contains("Çıkış"))
+
+            switch (CurrentPage.pageType)
             {
-                var navpage = (Page)Activator.CreateInstance(page);
-                navpage.Title = CurrentPage.Title;
-                Detail = new NavigationPage(navpage);
-                IsPresented = false;
+                case MasterPageItems.PageType.tabbed:
+            
+                    CurrentPage .Title = CurrentPage.Title;
+                    Detail =  new NavigationPage(CurrentPage.tabs);
+                    IsPresented = false;
+                    break;
+                case MasterPageItems.PageType.Single:
+                    var navpage = (Page)Activator.CreateInstance(page);
+                    navpage.Title = CurrentPage.Title;
+                    Detail =  new NavigationPage(navpage);
+                    IsPresented = false;
+                    break;
+                case MasterPageItems.PageType.none:
+                    if (!CurrentPage.Title.Contains("Çıkış"))
+                    {
+                        var isOk = await DisplayAlert("Durum", "Çıkmak istediğinize eminmisiniz?", "Evet", "Hayır");
+                        if (isOk)
+                        {
+                            Application.Current.MainPage = new Login();
+                        }
+                    }
+
+                    break;
+                default:
+                    break;
             }
-            else
-            {
-                var isOk = await DisplayAlert("Durum","Çıkmak istediğinize eminmisiniz?","Evet","Hayır");
-                if (isOk)
-                {
-                    Application.Current.MainPage = new Login();
-                }
-            }
+
            
         }
     }

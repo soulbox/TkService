@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TekService.Views
+namespace TekService.Views.Service
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Calender : ContentPage
+	public partial class History : ContentPage
 	{
-		public Calender ()
+		public History ()
 		{
 			InitializeComponent ();
-            txtstatus.Text =  MasterPage.CurrentPage != null ? MasterPage.CurrentPage.Title :"Takvim" ;
+
 		}
 	}
 }
